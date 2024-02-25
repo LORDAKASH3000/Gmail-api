@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Custom Search JSON API Example</title>
+  </head>
+  <body>
+    <!-- <script async src="https://cse.google.com/cse.js?cx=e07075170380243e7">
+    </script>
+    <div class="gcse-search"></div> -->
+    <div id="content"></div>
+    <script>
+      function hndlr(response) {
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        // Make sure HTML in item.htmlTitle is escaped.
+        document.getElementById("content").append(
+          document.createElement("br"),
+          document.createTextNode(item.htmlTitle)
+        );
+      }
+    }
+    </script>
+    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyA4mahdSljhkGU3KxV0BLIXMwiL86I_UMM&cx=e07075170380243e7&q=java&callback=hndlr">
+    </script>
+  </body>
+</html>
